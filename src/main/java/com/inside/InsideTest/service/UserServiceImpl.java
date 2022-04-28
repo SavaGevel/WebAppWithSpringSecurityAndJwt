@@ -1,9 +1,9 @@
-package com.inside.InsideTest.main.service;
+package com.inside.InsideTest.service;
 
-import com.inside.InsideTest.main.domain.Role;
-import com.inside.InsideTest.main.domain.User;
-import com.inside.InsideTest.main.repos.RoleRepo;
-import com.inside.InsideTest.main.repos.UserRepo;
+import com.inside.InsideTest.domain.Role;
+import com.inside.InsideTest.domain.User;
+import com.inside.InsideTest.repos.RoleRepo;
+import com.inside.InsideTest.repos.UserRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -18,7 +18,7 @@ import java.util.LinkedList;
 import java.util.Set;
 
 /**
- * User service implementation
+ * User com.inside.InsideTest.service implementation
  */
 
 @Service

@@ -1,9 +1,9 @@
-package com.inside.InsideTest.main.controller;
+package com.inside.InsideTest.controller;
 
-import com.inside.InsideTest.main.domain.Message;
-import com.inside.InsideTest.main.domain.RequestMessageDetails;
-import com.inside.InsideTest.main.service.MessageService;
-import com.inside.InsideTest.main.service.UserService;
+import com.inside.InsideTest.domain.Message;
+import com.inside.InsideTest.domain.RequestMessageDetails;
+import com.inside.InsideTest.service.MessageService;
+import com.inside.InsideTest.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * REST controller.
+ * REST com.inside.InsideTest.controller.
  */
 
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api")
-public class Controller {
+public class MessageController {
 
     private final static String HISTORY_10 = "history 10";
 
@@ -40,5 +40,4 @@ public class Controller {
             return ResponseEntity.ok().build();
         }
     }
-
 }

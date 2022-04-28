@@ -1,4 +1,4 @@
-package com.inside.InsideTest.main;
+package com.inside.InsideTest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

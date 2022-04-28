@@ -1,4 +1,4 @@
-package com.inside.InsideTest.main.filter;
+package com.inside.InsideTest.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
@@ -17,16 +17,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Base64;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
- * Authentication filter which checks username and password and send jwt to client if credentials were correct.
+ * Authentication com.inside.InsideTest.filter which checks username and password and send jwt to client if credentials were correct.
  */
 
 public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
@@ -50,7 +47,7 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
      * If authentication was successful create jwt and send it to client
      * @param request Http request from client
      * @param response Response which contains jwt in body
-     * @param chain filter chain
+     * @param chain com.inside.InsideTest.filter chain
      * @param authentication contains client information like username and password
      * @throws IOException
      * @throws ServletException
@@ -76,19 +73,19 @@ public class CustomAuthenticationFilter extends UsernamePasswordAuthenticationFi
      */
 
     private UsernamePasswordAuthenticationToken createAuthenticationToken(HttpServletRequest request) {
-        String jsonString = "";
-
+        Optional<String> jsonString = Optional.empty();
+        String username = "";
+        String password = "";
         try {
-            jsonString = request.getReader().lines().collect(Collectors.toList()).stream().reduce(String::concat).get();
+            jsonString = request.getReader().lines().collect(Collectors.toList()).stream().reduce(String::concat);
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        JSONObject loginParameters = new JSONObject(jsonString);
-
-        String username = loginParameters.get("username").toString();
-        String password = loginParameters.get("password").toString();
-
+        if(jsonString.isPresent()) {
+            JSONObject loginParameters = new JSONObject(jsonString.get());
+            username = loginParameters.get("username").toString();
+            password = loginParameters.get("password").toString();
+        }
         return new UsernamePasswordAuthenticationToken(username, password);
     }
 

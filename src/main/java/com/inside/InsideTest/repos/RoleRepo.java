@@ -1,6 +1,6 @@
-package com.inside.InsideTest.main.repos;
+package com.inside.InsideTest.repos;
 
-import com.inside.InsideTest.main.domain.Role;
+import com.inside.InsideTest.domain.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

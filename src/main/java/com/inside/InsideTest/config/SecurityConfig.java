@@ -1,8 +1,8 @@
-package com.inside.InsideTest.main.config;
+package com.inside.InsideTest.config;
 
-import com.inside.InsideTest.main.filter.CustomAuthenticationFilter;
-import com.inside.InsideTest.main.filter.CustomAuthorizationFilter;
-import com.inside.InsideTest.main.service.UserServiceImpl;
+import com.inside.InsideTest.filter.CustomAuthenticationFilter;
+import com.inside.InsideTest.filter.CustomAuthorizationFilter;
+import com.inside.InsideTest.service.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
      * Configure authenticationManager.
-     * @param auth set own user detail service and password encoder
+     * @param auth set own user detail com.inside.InsideTest.service and password encoder
      * @throws Exception
      */
 

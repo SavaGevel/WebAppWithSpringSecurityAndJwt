@@ -1,10 +1,10 @@
-package com.inside.InsideTest.main.service;
+package com.inside.InsideTest.service;
 
-import com.inside.InsideTest.main.domain.Role;
-import com.inside.InsideTest.main.domain.User;
+import com.inside.InsideTest.domain.Role;
+import com.inside.InsideTest.domain.User;
 
 /**
- * User service
+ * User com.inside.InsideTest.service
  */
 
 public interface UserService {

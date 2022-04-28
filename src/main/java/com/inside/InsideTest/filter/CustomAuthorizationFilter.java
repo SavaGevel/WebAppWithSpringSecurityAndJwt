@@ -1,4 +1,4 @@
-package com.inside.InsideTest.main.filter;
+package com.inside.InsideTest.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -20,7 +20,7 @@ import java.util.stream.Collectors;
 import static org.springframework.http.HttpHeaders.AUTHORIZATION;
 
 /**
- * Authorization filter which checks client's token's correctness and validity
+ * Authorization com.inside.InsideTest.filter which checks client's token's correctness and validity
  */
 
 public class CustomAuthorizationFilter extends OncePerRequestFilter {

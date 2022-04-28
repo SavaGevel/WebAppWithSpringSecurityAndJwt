@@ -1,4 +1,4 @@
-package com.inside.InsideTest.main.domain;
+package com.inside.InsideTest.domain;
 
 import lombok.Data;
 
